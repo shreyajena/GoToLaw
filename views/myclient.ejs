@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> GoToLaw </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/account1.css">
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/footer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+  <title>Login</title>
+	</head>
+	<body>
+		<nav id="n" class="nav navbar-inverse">
+  <div class="container-fluid">
+	 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collap" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a  class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="collap">
+		  <ul class=" nav navbar-nav navbar-right">
+			  <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			 <%  } else{ %>
+			  
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			   <li><a href="/logout">Logout</a></li>
+			 <% } %>
+		  </ul>
+	  </div>
+  </div>
+</nav>
+		
+		<div class="main2">
+    <p class="sign" align="center">Hey, welcome to the account of <%=myclient.firstname%>!</p>
+			<p class="sign1" align="center">
+				Client
+			</p>
+			
+			
+<div class="center">
+			<div id="profilepic" style="background-image:url('https://trial-nalkw.run-ap-south1.goorm.io/uploads/<%= myclient.image %>');">
+		</div>
+    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);">
+		  
+</div>
+		
+    <!-- <form class="form1" action="/myaccount?_method=PUT" method="POST"> -->
+		<label class="sign2" for="firstname">First name:</label>
+      <input class="un1 " type="text" align="center" placeholder="First name" value="<%=myclient.firstname%>" name="myclient[firstname]" readonly>
+		<label class="sign2" for="lastname">Last name:</label>
+      <input class="un1" type="text" align="center" placeholder="Last name"value="<%=myclient.lastname%>" name="myclient[lastname]" readonly >
+		<label class="sign2" for="emailid">Email id/username:</label>
+		<input class="un2" type="text" align="center" placeholder="Email id/username" value="<%= myclient.user.username %>" readonly>
+		<label class="sign2" for="specialization">Budget:</label>
+		<input class="pass1" type="text" align="center" placeholder="Budget(in INR)" value="<%=myclient.budget%>" name="myclient[budget]" readonly>
+		<label class="sign3" for="user">Location:</label>
+      <input class="pass1" type="text"  name="user" id="user" value="<%= myclient.location %>" name="myclient[location]" readonly>
+        
+		<label class="sign2" for="emailid">CaseHistory:</label>
+		<!-- <input class="un5" type="text" align="center" placeholder="Case History" value="<%=myclient.case_history%>" name="myclient[case_history]" readonly> -->
+			<textarea class="un50" type="text" align="center" placeholder="Case History" name="myclient[case_history]" ><%=myclient.case_history%></textarea>
+		
+			
+    </div>
+<script src="stylesheets/account1.js"></script>
+<%- include("partials/footer") %>

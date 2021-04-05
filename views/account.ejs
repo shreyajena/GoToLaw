@@ -1,0 +1,100 @@
+<!-- Account Page - LAWYER -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> GoToLaw </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/account1.css">
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/footer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+  <title>Login</title>
+	</head>
+	<body>
+		<nav id="n" class="nav navbar-inverse">
+  <div class="container-fluid">
+	 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collap">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a  class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="collap">
+		  <ul class=" nav navbar-nav navbar-right">
+			  <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			  
+			 <%  } else{ %>
+			  <li><a href="/notification"><i class="fa fa-bell fa-2x" aria-hidden="true"></i><span class="badge"><%= count %></span></a></li>
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			  <li><a href="/logout">Logout</a></li>
+			 <% } %>
+		  </ul>
+	  </div>
+  </div>
+</nav>
+		
+		<div class="main">
+    <p class="sign" align="center">Hey, welcome <%= lawyer.firstname %>!</p>
+			<p class="sign1" align="center">
+				Lawyer
+			</p>
+			
+			
+			<form class="form1" action="/myaccount?_method=PUT" method="POST" enctype="multipart/form-data">
+			
+		<div class="center">
+			<div id="profilepic" style="background-image:url('./uploads/<%= lawyer.image %>');">
+		</div>
+    <input type="file" id="file-ip-1" accept="image/*" onchange="showPreview(event);" name="file" >
+		  
+			<!-- style="background-image: url('img_girl.jpg');" -->
+</div>
+    
+		
+		<label class="sign2" for="firstname">First name:</label>
+      <input class="un1 " type="text" align="center" placeholder="First name" value="<%= lawyer.firstname %>" name="lawyer[firstname]" required="true">
+		<label class="sign2" for="lastname">Last name:</label>
+      <input class="un1" type="text" align="center" placeholder="Last name" value="<%= lawyer.lastname %>" name="lawyer[lastname]" required="true">
+		<label class="sign2" for="emailid">Email id/username:</label>
+		<input class="un2" type="text" align="center" placeholder="Email id/username" value="<%= lawyer.user.username %>" readonly>
+		<label class="sign2" for="specialization">Specilization:</label>
+		<input class="pass1" type="text" align="center" placeholder="specialization" value="<%= lawyer.specialization %>" name="lawyer[specialization]" required="true">
+		
+		<!-- <label class="sign2" for="specialization">Image:</label>
+		<input class="pass1" type="text" align="center" placeholder="image" value="<%= lawyer.image %>" name="lawyer[image]"> -->
+		
+		<label class="sign3" for="user">Location:</label>
+      <input class="pass1" type="text"  id="user" placeholder="In India" value="<%= lawyer.location %>" name="lawyer[location]">
+		<label class="sign2" for="emailid">About:</label>
+		<textarea class="unhistory" type="text" align="center" placeholder="About" name="lawyer[about]"><%= lawyer.about %></textarea>  
+		<label class="sign2" for="emailid">Courts:</label>
+		<input class="un3" type="text" align="center" placeholder="Courts" value="<%= lawyer.courts %>" name="lawyer[courts]">
+		<label class="sign2" for="specialization">Languages:</label>
+		<input class="un1" type="text" align="center" placeholder="Languages" value="<%= lawyer.languages %>" name="lawyer[languages]">
+		<label class="sign2" for="specialization">Experience:</label>
+		<input class="pass1" type="text" align="center" placeholder="in years" value="<%= lawyer.experience %>" name="lawyer[experience]" required="true">
+		<label class="sign4" for="specialization">Charge:</label>
+		<input class="pass1" type="text" align="center" placeholder="Charge(in INR)" value="<%= lawyer.charge %>" name="lawyer[charge]">
+		
+      <button class="submit" type="submit" align="center">Done</button>
+            
+			</form>  
+			<div>
+				  
+			</div>
+			<form   action="/myaccount?_method=DELETE" method="POST">
+		<button id="delete" class="submit">
+			Delete 
+			</button>	
+		</form>
+    </div>
+<script src="stylesheets/account1.js"></script>
+<%- include("partials/footer") %>

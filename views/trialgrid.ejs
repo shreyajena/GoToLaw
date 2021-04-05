@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GoToLaw</title>
+<!-- bootstrap	 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 	stylesheets -->
+	<link rel="stylesheet" href="/stylesheets/login.css">
+	<link rel="stylesheet" href="/stylesheets/footer.css">
+	<link href="/stylesheets/trialgrid.css" rel="stylesheet" />
+<!-- fonts	 -->
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
+	 <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+
+<body> 
+<!-- 	NAVBAR -->
+<nav id="n" class="nav navbar-inverse">
+  <div class="container-fluid">
+	 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collap" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a  class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="collap">
+		  <ul class=" nav navbar-nav navbar-right">
+			  <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			 <%  } else{ %>
+			  <li><a href="/logout">Logout</a></li>
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			 <% } %>
+		  </ul>
+	  </div>
+  </div>
+</nav>
+	
+<!-- Main Parralax image	 -->
+	<div class="container">
+
+		<div class="placeholder">
+			<div class="parallax-window center" data-parallax="scroll" data-image-src="<%= type[0].image %>" data-position="10px 10px">
+				<div class="tm-header">
+					<h2 class="content__title"><%= type[0].name %>  LAWYERS</h2>
+					<div class="row tm-header-inner">
+					
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<main>
+			<header class="row tm-welcome-section">
+				<p class="col-12 text-center">
+					<%= type[0].desc %>
+				</p>
+			</header>
+			
+					
+
+<!-- 		GRID LIST	 -->
+			
+		 <div class="row tm-gallery">
+			 <% lawyers.forEach(function(law){ %>
+					<article class=" col-lg-3 col-md-4 col-sm-6  tm-gallery-item">
+						
+						<figure>
+							<img src="./uploads/<%=law.image%>" alt="Image" class="img-fluid tm-gallery-img "/>
+							<div class="middle">
+							<a href="/lawyer/show/<%=law._id%>"><button type="button" class="btn btn-primary text" align="center">More!</button></a>	   
+                            </div>
+							<figcaption>
+								<h4 class="tm-gallery-title "> Name: <%= law.firstname + " "+ law.lastname %></h4>
+								<h4 class="tm-gallery-title1 ">Specialization: <%= law.specialization %></h4>
+								<p class="tm-gallery-description "> Experience: <%= law.experience %>  years</p>
+								<p class="tm-gallery-location "><i class="fa fa-map-marker fa-x" aria-hidden="true"></i> <%= law.location %></p>
+							</figcaption>
+						</figure>	
+					
+			 </article>
+			 <% }); %>
+				</div> 
+		</main>
+
+     <hr>
+		<%- include("partials/footer") %>
+	</div>
+	<script src="stylesheets/jquery.min.js"></script>
+	 <script src="stylesheets/parallax.min.js"></script>
+	
+	
+</body>
+</html>

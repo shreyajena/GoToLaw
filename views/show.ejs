@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GoToLaw</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- bootstrap	 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- 	stylesheets -->
+	<link rel="stylesheet" href="/stylesheets/login.css">
+	<link rel="stylesheet" href="/stylesheets/footer.css"> 
+	<link rel="stylesheet" type="text/css" href="/stylesheets/show.css">
+	<link href="/stylesheets/trialgrid.css" rel="stylesheet" />
+<!-- fonts	 -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" /> 
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+	 <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+
+<body> 
+<!-- 	NAVBAR -->
+<nav id="n" class="nav navbar-inverse">
+  <div class="container-fluid">
+	 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collap" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a  class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="collap">
+		  <ul class=" nav navbar-nav navbar-right">
+			   <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			 <%  } else{ %>
+			  <li><a href="/logout">Logout</a></li>
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			 <% } %>
+		  </ul>
+	  </div>
+  </div>
+</nav>
+	
+<div class="container-fluid px-0">
+  <div class="row align-items-center">
+   
+  </div>
+</div>
+
+<!-- div of info -->
+<div class="container-fluid px-0 content">
+  <div class="row align-items-center">
+
+    <div class="col-md-6 order-2 order-md-1">
+    
+		<img class="img-fluid" src="https://trial-nalkw.run-ap-south1.goorm.io/uploads/<%= lawyer.image %>">
+    </div>
+
+    <div class="col-md-6 text-center order-1 order-md-2">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+    <h2><%= lawyer.firstname + " " + lawyer.lastname%></h2>
+			<i class="fa fa-graduation-cap fa-2x d-none d-lg-inline" aria-hidden="true"></i>
+    <!-- <img class="d-none d-lg-inline" src="lolli_icon.png"> -->
+    <p  id="content" class="lead"><%=lawyer.about%> </p>
+			<p  id="content" class="lead">Courts:<%= lawyer.courts %></p>
+			<p  id="content" class="lead">Experience(in Years):<%= lawyer.experience %></p>
+			<p  id="content" class="lead">Languages:<%= lawyer.languages %></p>
+			<p  id="content" class="lead"><i class="fa fa-map-marker fa-x" aria-hidden="true"></i>Location: <%= lawyer.location %></p>     
+			<p  id="content" class="lead">Charge: Rs. <%= lawyer.charge %></p>
+			<!-- <p id="content" class="lead">Charge:$ </p> -->
+			<!-- <a class="btn btn-primary btn-lg" href="/connect/%=lawyer._id%>" role="button">Connect !</a> -->
+			
+			<% if(user==0){ %>
+			<form  action="/connect/<%=lawyer._id%>" method="POST">
+				<% if(status=="connected"){ %>
+		<button class="btn btn-primary btn-lg">Connect !</button>
+			</form>
+				<% } else if(status=="requested"){ %>
+				<button class="btn btn-default btn-lg">Already Requested !</button>
+			
+				<% } else{ %>
+				<button class="btn btn-success btn-lg">Already Connected!</button>
+				<% } %>
+			
+			<% } %>
+			
+        </div>
+        </div>
+        </div>
+  </div>
+</div>
+     <hr>
+		<%- include("partials/footer") %>
+		
+	

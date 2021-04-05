@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> GoToLaw </title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="/stylesheets/login.css">
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+		<link rel="stylesheet" href="/stylesheets/footer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		 <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
+	 <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+  <title>Login</title>
+	</head>
+	<body>
+		<nav id="n" class="nav navbar-inverse">
+  <div class="container-fluid">
+	 <div class="navbar-header">
+		 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+		<a  class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class=" nav navbar-nav navbar-right">
+			  <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			
+			 <%  } else{ %>
+			  <li><a href="/logout">Logout</a></li>
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			 <% } %>
+		  </ul>
+	  </div>
+  </div>
+</nav>
+		
+		<div class="main">
+    <p class="sign" align="center">Hey, welcome to GoToLaw family!</p>
+			<p class="sign1" align="center">
+				Time to Signup
+			</p>
+    <form class="form1" action="/signup" method="POST">
+		<label class="sign2" for="firstname" required="true">First name:</label>
+      <input class="un1 " type="text" align="center" placeholder="First name" name="alluser[firstname]" required="true">
+		<label class="sign2" for="lastname" required="true">Last name:</label>
+      <input class="un1" type="text" align="center" placeholder="Last name" name="alluser[lastname]" required="true">
+		<label class="sign2" for="emailid" required="true">Email id/username:</label>
+		<input class="un2" type="text" align="center" placeholder="Email id/username" name="username" required="true">
+		<label class="sign2" for="password">Password:</label>
+		<input class="pass1" type="password" align="center" placeholder="password" name="password" required="true"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 5 or more characters">
+		<label class="sign3" for="user"required="true">User:</label>
+      <select class="pass1" id="drop" name="user" id="user">
+         <option value="0">Lawyer</option>
+         <option value="1">Client</option>
+         </select>
+		<button class="submit" type="submit" align="center">Sign up</button>
+		
+            
+			</form>          
+    </div>
+
+<%- include("partials/footer") %>

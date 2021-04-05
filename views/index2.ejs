@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Go To Law</title>
+<!-- desc		 -->
+		<meta name="description" content="A CSS Grid powered menu with a box look" />
+		<meta name="author" content="shreya sneha" />
+
+		 <!-- bootstrap -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- 	custom stylesheets	 -->
+		<link rel="stylesheet" type="text/css" href="stylesheets/base.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/demo2.css" />
+		<!-- fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+		<!-- animation package -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"      type="text/javascript" async></script>
+<!-- 	font awesome	 -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+		
+	
+		
+		
+	</head>
+	<body class="demo-2 loading">
+		<!-- NAVBAR -->
+		 <nav id="n" class="nav navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+	  
+	 <div class="navbar-header">
+		 
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button> 
+		<a class="navbar-brand" href="/"><span id="logotext1">Go</span><span id="logotext2">ToLaw</span></a>
+	 </div>
+	  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  
+		  <ul class=" nav navbar-nav navbar-right">
+			 
+			  <li><button class="menu-trigger">E . X . P . L . O . R . E      
+			<i class="fa fa-rocket" aria-hidden="true">  </i>
+					 </button>
+			  </li>
+			  <li><% if(message.length>0){ %>
+			<div  id="message">
+		<%= message %>
+		</div>
+	     <% } %></li>
+			   
+			 <% if(!currentuser){ %>
+			  <li><a href="/login">Login</a></li>
+			  <li><a href="/signup">Signup</a></li>
+			 <%  } else{ %>
+			  <li><a href="/logout">Logout</a></li>
+			   <li><a href="/myaccount"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a></li>
+			 <% } %>
+			 
+		  </ul>
+	  </div>
+  </div>
+</nav>
+		
+		<svg class="hidden">
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 "/>
+			</symbol>
+			<symbol id="icon-drop" viewBox="0 0 24 24">
+				<title>drop</title>
+				<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"/><path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"/>
+			</symbol>
+		</svg>
+		
+		
+			
+		
+		
+		<main>
+			<div class="message">To see the menu, please view on a larger screen.</div>
+			
+			
+    <!-- LANDING PAGE CONTENT	-->
+			
+			
+			<div id="content-1" class="content content--switch content--switch-current">
+				 <div id="landing-header">
+ 		<h1 class="welcome">Welcome to the World of Virtual Law!</h1>
+		
+		
+    </div>
+		
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+			</div>
+			
+<!-- 		OTHER CATEGORY PAGES HTML	 -->
+			
+			<div id="content-2" class="content content--switch">
+				<h2 class="content__title">Family</h2>
+				<div class="content__subtitle">Lawyers</div>
+				 <a class="go" align="center" href="/family">GO</a>
+			</div>
+			<div id="content-3" class="content content--switch">
+				<h2 class="content__title">Corporate</h2>
+				<div class="content__subtitle">Lawyers</div>
+				 <a class="go" align="center"href="/corporate" >GO</a>
+			</div>
+			<div id="content-4" class="content content--switch">
+				<h2 class="content__title">Civil</h2>
+				<div class="content__subtitle">Litigation Lawyers</div>
+				 <a class="go" align="center" href="/civil">GO</a>
+			</div>
+			<div id="content-5" class="content content--switch">
+				<h2 class="content__title">Criminal</h2>
+				<div class="content__subtitle">Defence Lawyers</div>
+				 <a class="go" align="center" href="/criminal">GO</a> 
+			</div>
+			<div id="content-6" class="content content--switch">
+				<h2 class="content__title">LAWYERS</h2>
+				<div class="content__subtitle">Explore the limits of law</div>
+				 <a class="go" align="center" href="/alllawyers">GO</a>
+			</div>
+			<nav class="grim">
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--1"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--2"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--3"></div>
+					<div class="grim__item-content">
+						<div class="grim__item-inner ">
+							<button class="menu-trigger menu-trigger--close wh">- close</button>
+						</div>
+					</div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--4"></div>
+				</div>
+			<div class="grim__item"> 
+					<div class="grim__item-bg grim__item-bg--5"></div>
+					<a href="#content-1" class="grim__link grim__item-content">
+						<div class="grim__item-inner">
+							<h3 class="grim__item-title bl">Home</h3>
+						</div>
+					</a>
+            </div>
+				
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--6"></div>
+					<div class="grim__item-img grim__item-img--1"></div>
+					<a href="#content-2" class="grim__link grim__item-content">
+						<div class="grim__item-inner wh">
+							<h3 class="grim__item-title">Family</h3>
+							<span class="grim__item-desc">Lawyers</span>
+						</div>
+					</a>
+					<div class="grim__item-bg grim__item-bg-cover grim__item-bg--6"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--7"></div>
+					<div class="grim__item-img grim__item-img--2"></div>
+					<a href="#content-3" class="grim__link grim__item-content">
+						<div class="grim__item-inner">
+							<h3 class="grim__item-title">Corporate</h3>
+							<span class="grim__item-desc">Lawyers</span>
+						</div>
+					</a>
+					<div class="grim__item-bg grim__item-bg-cover grim__item-bg--7"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--8"></div>
+					<div class="grim__item-img grim__item-img--3"></div>
+					<a href="#content-4" class="grim__link grim__item-content">
+						<div class="grim__item-inner bl">
+							<h3 class="grim__item-title ">Civil</h3>
+							<span class="grim__item-desc ">Litigation Lawyers</span>
+						</div>
+					</a>
+					<div class="grim__item-bg grim__item-bg-cover grim__item-bg--8"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--9"></div>
+					<div class="grim__item-img grim__item-img--4"></div>
+					<a href="#content-5" class="grim__link grim__item-content">
+						<div class="grim__item-inner">
+							<h3 class="grim__item-title">Criminal</h3>
+							<span class="grim__item-desc">Defence Lawyers</span>
+						</div>
+					</a>
+					<div class="grim__item-bg grim__item-bg-cover grim__item-bg--9"></div>
+				</div>
+				<div class="grim__item">
+					<div class="grim__item-bg grim__item-bg--10"></div>
+					<div class="grim__item-img grim__item-img--5"></div>
+					<a href="#content-6" class="grim__link grim__item-content">
+						<div class="grim__item-inner">
+							<h3 class="grim__item-title">LAWYERS</h3>
+							<span class="grim__item-desc">Explore the limits of law</span>
+						</div>
+					</a>
+					<div class="grim__item-bg grim__item-bg-cover grim__item-bg--10"></div>
+				</div>
+			</nav>
+		</main>
+		<script src="stylesheets/demo.js"></script>
+		<script src="stylesheets/imagesloaded.pkgd.min.js"></script>
+		
+       <!-- Package for Grid Animation -->
+		<script src="stylesheets/anime.min.js"></script>
+		
+		<script src="stylesheets/menu2.js"></script>
+		
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script >
+  $(function(){
+
+    $(document).scroll(function(){
+      var $nav=$("#n");
+      $nav.toggleClass("scrolled",$(this).scrollTop() > $nav.height());
+    });
+  });
+		</script>
+	</body>
+</html>
